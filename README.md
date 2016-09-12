@@ -1,7 +1,11 @@
 # compuational_physics_N2014301020122
 ====
-## Homework List
+###School of Physics and Technology, Wuhan University
+###Class:Tian Juan
+###Student ID:2014301020122
 ------
+## Homework List
+<br>
 - [ ] [Exercise_03:]()
 - [ ] [Exercise_04:]()
 - [ ] [Exercise_05:]()
