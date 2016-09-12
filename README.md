@@ -1,7 +1,8 @@
 # compuational_physics_N2014301020122
 ====
 ###School of Physics and Technology, Wuhan University
-###Class:Tian Juan
+###Class:天眷班
+###Name:王子华
 ###Student ID:2014301020122
 ------
 ## Homework List
