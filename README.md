@@ -7,7 +7,7 @@
 ------
 ## Homework List
 <br>
-- [ ] [Exercise_02:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Exercise%202)
+- [x] [Exercise_02:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Exercise%202)
 - [ ] [Exercise_03:]()
 - [ ] [Exercise_04:]()
 - [ ] [Exercise_05:]()
