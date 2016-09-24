@@ -7,8 +7,8 @@
 ------
 ## Homework List
 <br>
-- [x] [Exercise_02:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Exercise%202)
-- [x] [Exercise_03:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Exercise%203)
+- [x] [Exercise_02:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Exercise%202.md)
+- [x] [Exercise_03:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Exercise%203.md)
 - [ ] [Exercise_04:]()
 - [ ] [Exercise_05:]()
 - [ ] [Exercise_06:]()
