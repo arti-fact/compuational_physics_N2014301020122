@@ -186,7 +186,9 @@ while 1 :
     print("                ####   #   #  #   #  ###  #####  #####")
     
     time.sleep(0.7)
-
+    
+    import os
+    i=os.system('cls')
 
 #Exercise_03: L2
 
