@@ -1,3 +1,4 @@
+#Exercise_03:L1
 
 import time
 
@@ -184,3 +185,5 @@ print("               #   #  #   #  #  ##   #   #      #    ")
 print("               ####   #   #  #   #  ###  #####  #####")
 
 time.sleep(0.7)
+
+#Exercise_03: L2
