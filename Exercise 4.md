@@ -10,12 +10,11 @@ equatiions for the numbers of nuclei, NA=100, NB=0, etc., and take τ=1s. Show t
 that the system reaches a steady state in which NA and NB are constant. In such a steady state, the time derivatives dNA/dt and dNB/dt
 should vanish.
 
-# 方程的解析
 ## 假设原子的衰变方程
 ### <img src="http://latex.codecogs.com/gif.latex?\frac{dN}{dt}=-\frac{N}{\tau}" alt="" title="" />  (1.1) <br/>
-对N做泰勒展开得到 <br/>
+对N做泰勒展开有 <br/>
   ![](http://latex.codecogs.com/gif.latex?N%28%5CDelta%20t%29%3DN%280%29&plus;%5Cfrac%7BdN%7D%7Bdt%7D%5Ccdot%5CDelta%20t&plus;%5Cfrac%7B1%7D%7B2%7D%5Ccdot%5Cfrac%7Bd%5E2N%7D%7Bdt%5E2%7D&plus;...) <br/>
-  取前两项得 <br/>
+  取前两项有 <br/>
   ![](http://latex.codecogs.com/gif.latex?N%28%5CDelta%20t%29%5Capprox%20N%280%29&plus;%5Cfrac%7BdN%7D%7Bdt%7D%5Ccdot%5CDelta%20t) <br/>
   又有  <br/>
  ![](http://latex.codecogs.com/gif.latex?%5Cfrac%7BdN%7D%7Bdt%7D%3D%5Clim_%7B%5CDelta%20t%5Crightarrow%200%7D%5Cfrac%7BN%28t&plus;%5CDelta%20t%29-N%28t%29%7D%7B%5CDelta%20t%7D%5Capprox%20%5Cfrac%7BN%28t&plus;%5CDelta%20t%29-N%28t%29%7D%7B%5CDelta%20t%7D) <br/>
@@ -68,3 +67,5 @@ should vanish.
 
 # 得到的结果如下图所示
 ![](https://github.com/Damonphysics/computationalphysics_N2014301020007/blob/master/figure_1.png)
+
+# 鸣谢：参考了彭辰铭同学的部分代码
