@@ -14,7 +14,7 @@ Euler法解二阶微分方程 <br/>
  ![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cmathrm%7Bd%7Dv_%7Bx%7D%20%7D%7B%5Cmathrm%7Bd%7D%20t%7D%3D0) （4） <br/>
 之后只需用Euler法解此方程组即可
 
-###代码
+###代码（请查看raw）
 import math
 import matplotlib.pyplot as plt
 class trajectory(object):
