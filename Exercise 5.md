@@ -7,12 +7,12 @@ Euler法解二阶微分方程 <br/>
  ![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cpartial%5E2x%20%7D%7B%5Cpartial%20t%5E2%7D%3D0) <br/>
  ![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cpartial%5E2y%20%7D%7B%5Cpartial%20t%5E2%7D%3D-g)<br/>
 利用 <br/>
- ![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cmathrm%7Bd%7Dx%20%7D%7B%5Cmathrm%7Bd%7D%20t%7D%3Dv_%7Bx%7D) <br/>
- ![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cmathrm%7Bd%7Dy%20%7D%7B%5Cmathrm%7Bd%7D%20t%7D%3Dv_%7By%7D) <br/>
-可得 <br/>
- ![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cmathrm%7Bd%7Dv_%7By%7D%20%7D%7B%5Cmathrm%7Bd%7D%20t%7D%3Dg) <br/>
- ![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cmathrm%7Bd%7Dv_%7Bx%7D%20%7D%7B%5Cmathrm%7Bd%7D%20t%7D%3D0) <br/>
-之后只需用Euler解此方程组即可
+ ![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cmathrm%7Bd%7Dx%20%7D%7B%5Cmathrm%7Bd%7D%20t%7D%3Dv_%7Bx%7D) （1） <br/>
+ ![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cmathrm%7Bd%7Dy%20%7D%7B%5Cmathrm%7Bd%7D%20t%7D%3Dv_%7By%7D) （2） <br/>
+则可以把方程组降为四元一阶常微分方程组 <br/>
+ ![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cmathrm%7Bd%7Dv_%7By%7D%20%7D%7B%5Cmathrm%7Bd%7D%20t%7D%3Dg) （3） <br/>
+ ![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cmathrm%7Bd%7Dv_%7Bx%7D%20%7D%7B%5Cmathrm%7Bd%7D%20t%7D%3D0) （4） <br/>
+之后只需用Euler法解此方程组即可
 
 ###代码
 import math
