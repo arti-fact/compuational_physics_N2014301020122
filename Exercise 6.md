@@ -14,14 +14,14 @@
 之后只需同样用Euler法解此方程组即可
 
 
-### 代码
+### 代码（请查看raw）
 import matplotlib.pyplot as plt
 import math
 theta_proper=[]
 #t=0
 vx=[]
 vy=[]
-dt=0.1
+dt=0.05
 v=[]
 x=[]
 y=[]
@@ -30,8 +30,8 @@ bm=4e-5
 T=200
 a=6.5e-3
 c=2.5
-g=9.8
-target1=20000
+g=9.80665
+target1=10000
 target2_list=[-300,0,4000]
 for theta in range(0,90):
     v.append(v_ini)
