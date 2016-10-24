@@ -12,11 +12,27 @@
  ![](http://latex.codecogs.com/gif.latex?y_%7Bi&plus;1%7D%3Dy_%7Bi%7D&plus;v_%7By%2Ci%7D%5CDelta%20t) （3） <br/>
  ![](http://latex.codecogs.com/gif.latex?v_%7By%2Ci&plus;1%7D%3Dv_%7By%7D-%5Cfrac%7BB_%7B2%7Dvv_%7By%2Ci%7D%7D%7Bm%7D%5Cleft%20%28%201-%5Cfrac%7Bay%7D%7BT_%7B0%7D%7D%20%5Cright%20%29%5E%7B%5Calpha%20%7D%5CDelta%20t-g%5CDelta%20t) （4） <br/>
 之后只需同样用Euler法解此方程组即可
-
+### 考虑到误差后，初始速度5%误差，角度+-2度误差，运用算得值，求实际发射距离
 
 ### 代码（请查看raw）
 import matplotlib.pyplot as plt
 import math
+import random
+print('print v')
+v=float(input())
+print('print angle')
+b=float(input())
+l=[]
+n=0
+dt=0.01
+distance_y=-10
+while(n<=5):
+    vr = random.uniform(v * 0.95, v * 1.05)
+    angler = random.uniform(b - 2, b + 2)
+    vx = (vr) * math.cos(angler * math.pi / 180)
+    vy = (vr) * math.sin(angler * math.pi / 180)
+    x = 0
+    y = 0
 theta_proper=[]
 #t=0
 vx=[]
@@ -39,7 +55,7 @@ for theta in range(0,90):
     x.append(0),y.append(0)
     while x[-1]<=11000:
         vx.append(vx[-1]-bm*dt*v[-1]*vx[-1]*(1-a*y[-1]/T)**c)
-        vy.append(vy[-1]-g*dt-bm*dt*v[-1]*vy[-1]*(1-a*y[-1]/T)**c)
+        vy.append(vy[-1]-bm*dt*v[-1]*vy[-1]*(1-a*y[-1]/T)**c-g*dt)
         x.append(x[-1]+vx[-1]*dt)
         y.append(y[-1]+vy[-1]*dt)
         v.append(math.sqrt(vx[-1]**2+vy[-1]**2))
@@ -48,5 +64,7 @@ for theta in range(0,90):
                 print"the altitude,the proper theta:",target2_list[i],theta
                 theta_proper.append(theta)
                 break
+
+time_step 为影响精度的主要因素
 
 ###Acknowledgements 感谢卢江玮同学在代码方面的指导
