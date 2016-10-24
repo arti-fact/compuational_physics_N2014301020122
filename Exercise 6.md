@@ -7,10 +7,10 @@
 利用之前作业中的Euler法解二阶微分方程，将方程进行微调，加入空气阻力与绝热方程的影响 <br/>
 则可以把方程组降为四元一阶常微分方程组 <br/>
  ![](http://latex.codecogs.com/gif.latex?x_%7Bi&plus;1%7D%3Dx_%7Bi%7D&plus;v_%7Bx%2Ci%7D%5CDelta%20t) （1） <br/>
- ![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cmathrm%7Bd%7Dy%20%7D%7B%5Cmathrm%7Bd%7D%20t%7D%3Dv_%7By%7D) （2） <br/>
+ ![](http://latex.codecogs.com/gif.latex?v_%7Bx%2Ci&plus;1%7D%3Dv_%7Bx%7D-%5Cfrac%7BB_%7B2%7Dvv_%7Bx%2Ci%7D%7D%7Bm%7D%5Cleft%20%28%201-%5Cfrac%7Bay%7D%7BT_%7B0%7D%7D%20%5Cright%20%29%5E%7B%5Calpha%20%7D%5CDelta%20t) （2） <br/>
 
- ![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cmathrm%7Bd%7Dv_%7By%7D%20%7D%7B%5Cmathrm%7Bd%7D%20t%7D%3Dg) （3） <br/>
- ![](http://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Cmathrm%7Bd%7Dv_%7Bx%7D%20%7D%7B%5Cmathrm%7Bd%7D%20t%7D%3D0) （4） <br/>
+ ![](http://latex.codecogs.com/gif.latex?y_%7Bi&plus;1%7D%3Dy_%7Bi%7D&plus;v_%7By%2Ci%7D%5CDelta%20t) （3） <br/>
+ ![](http://latex.codecogs.com/gif.latex?v_%7By%2Ci&plus;1%7D%3Dv_%7By%7D-%5Cfrac%7BB_%7B2%7Dvv_%7By%2Ci%7D%7D%7Bm%7D%5Cleft%20%28%201-%5Cfrac%7Bay%7D%7BT_%7B0%7D%7D%20%5Cright%20%29%5E%7B%5Calpha%20%7D%5CDelta%20t-g%5CDelta%20t) （4） <br/>
 之后只需同样用Euler法解此方程组即可
 
 
