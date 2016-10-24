@@ -48,3 +48,5 @@ for theta in range(0,90):
                 print"the altitude,the proper theta:",target2_list[i],theta
                 theta_proper.append(theta)
                 break
+
+###Acknowledgements 感谢卢江玮同学在代码方面的指导
