@@ -11,7 +11,7 @@
 
  ![](http://latex.codecogs.com/gif.latex?y_%7Bi&plus;1%7D%3Dy_%7Bi%7D&plus;v_%7By%2Ci%7D%5CDelta%20t) （3） <br/>
  ![](http://latex.codecogs.com/gif.latex?v_%7By%2Ci&plus;1%7D%3Dv_%7By%7D-%5Cfrac%7BB_%7B2%7Dvv_%7By%2Ci%7D%7D%7Bm%7D%5Cleft%20%28%201-%5Cfrac%7Bay%7D%7BT_%7B0%7D%7D%20%5Cright%20%29%5E%7B%5Calpha%20%7D%5CDelta%20t-g%5CDelta%20t) （4） <br/>
-之后只需同样用Euler法解此方程组即可
+之后只需同样用Euler法解此方程组即可，考虑的情况为初速度固定改变角度
 ### 考虑到误差后，初始速度5%误差，角度+-2度误差，运用算得值，求实际发射距离
 
 ### 代码（请查看raw）
@@ -65,6 +65,6 @@ for theta in range(0,90):
                 theta_proper.append(theta)
                 break
 
-time_step 为影响精度的主要因素
+time_step 为影响精度的主要因素，适当缩小可提高精度
 
 ###Acknowledgements 感谢卢江玮同学在代码方面的指导
