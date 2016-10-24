@@ -37,7 +37,7 @@ for theta in range(0,90):
     v.append(v_ini)
     vx.append(v_ini*math.cos(theta*math.pi/180)),vy.append(v_ini*math.sin(theta*math.pi/180))
     x.append(0),y.append(0)
-    while x[-1]<=22000:
+    while x[-1]<=11000:
         vx.append(vx[-1]-bm*dt*v[-1]*vx[-1]*(1-a*y[-1]/T)**c)
         vy.append(vy[-1]-g*dt-bm*dt*v[-1]*vy[-1]*(1-a*y[-1]/T)**c)
         x.append(x[-1]+vx[-1]*dt)
