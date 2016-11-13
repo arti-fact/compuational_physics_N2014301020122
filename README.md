@@ -13,7 +13,7 @@
 - [x] [Exercise_05:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Exercise%205.md)
 - [x] [Exercise_06:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Exercise%206.md)
 - [x] [Exercise_07:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Exercise%207.md)
-- [ ] [Exercise_08:]()
+- [x] [Exercise_08:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Exercise%208.md)
 - [ ] [Exercise_09:]()
 - [ ] [Exercise_10:]()
 - [ ] [Exercise_11:]()
