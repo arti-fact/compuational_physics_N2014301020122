@@ -67,5 +67,19 @@
 
 注意，若<img src="https://github.com/ACGNnsj/compuational_physics_N2014301020001/blob/master/Excercise_07/CodeCogsEqn%20(13).gif?raw=true" alt="" title="" />不在区间<img src="https://github.com/ACGNnsj/compuational_physics_N2014301020001/blob/master/Excercise_07/CodeCogsEqn%20(14).gif?raw=true" alt="" title="" />内，我们须通过加或减<img src="https://github.com/ACGNnsj/compuational_physics_N2014301020001/blob/master/Excercise_07/CodeCogsEqn%20(15).gif?raw=true" alt="" title="" />使其落入区间内。
 
+### 庞加莱映射（以下来自于百科）
 
-#老师很抱歉，我似乎在安装VPython时出现问题，请求下周补交，会在下周作业开头注明
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在数学领域中，尤其是对动态系统的研究中，庞加莱映射，或第一次回归映射是连续动力系统的状态空间中的周期轨道与确定的低维子空间的横向交点，其中的低维子空间被称作庞加莱截面。更精确的说，对于具有初值位于庞加莱截面上的周期轨道，轨道第一次回到庞加莱截面上的交点就定义了初值的庞加莱映射，这就是第一次回归映射的由来。
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;任何粒子在经历一个漫长的时间之后必然能回到其无限接近其初始位置的位置（但是不能回到原来位置，只能无限接近），尽管这个时间的长度远远超出我们所能想象，但是它必然会实现，这样一个周期就称为一个庞加莱回归。
+
+<div align=center>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Poincare_map.svg/771px-Poincare_map.svg.png" alt="" title="" />
+</div>
+
+<div align=center>
+在庞加莱截面 S 上, 庞加莱映射 P 将 x 映射为 P(x).
+</div>
+
+
+# 老师很抱歉，我似乎在安装VPython时出现问题，请求下周补交，会在下周作业开头注明
