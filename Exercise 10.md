@@ -89,4 +89,164 @@ nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1687年，物理泰斗艾萨克·
 </div>
 
 ### 代码
+<pre><code>
+import math
+import numpy as np
+import pylab as pl
+import time
+import matplotlib.pyplot as plt
+from matplotlib import animation
+
+def cruisingx(beta,total_time,initvy):
+    initx = 1
+    inity = 0
+    initvx = 0
+    time_step = 0.0001
+    x = [initx]
+    y = [inity]
+    vx = [initvx]
+    vy = [initvy]
+    dt = time_step
+    tt = total_time
+    r = 0.0
+    cur_t = 0.0
+    power = beta + 1
+    while cur_t < tt:
+        r = math.sqrt(x[-1] ** 2 + y[-1] ** 2)
+        vx.append(vx[-1] - 4 * math.pi ** 2 * x[-1] * dt / r ** power)
+        vy.append(vy[-1] - 4 * math.pi ** 2 * y[-1] * dt / r ** power)
+        x.append(x[-1] + vx[-1] * dt)
+        y.append(y[-1] + vy[-1] * dt)
+        cur_t += dt
+    return x
+
+def cruisingy(beta,total_time,initvy):
+    initx = 1
+    inity = 0
+    initvx = 0
+    time_step = 0.0001
+    x = [initx]
+    y = [inity]
+    vx = [initvx]
+    vy = [initvy]
+    dt = time_step
+    tt = total_time
+    r = 0.0
+    cur_t = 0.0
+    power = beta + 1
+    while cur_t < tt:
+        r = math.sqrt(x[-1] ** 2 + y[-1] ** 2)
+        vx.append(vx[-1] - 4 * math.pi ** 2 * x[-1] * dt / r ** power)
+        vy.append(vy[-1] - 4 * math.pi ** 2 * y[-1] * dt / r ** power)
+        x.append(x[-1] + vx[-1] * dt)
+        y.append(y[-1] + vy[-1] * dt)
+        cur_t += dt
+    return y
+
+def exeTime(func):
+    def newFunc(*args, **args2):
+        t0 = time.time()
+        print ("@%s, {%s} start" % (time.strftime("%X", time.localtime()), func.__name__))
+        back = func(*args, **args2)
+        print ("@%s, {%s} end" % (time.strftime("%X", time.localtime()), func.__name__))
+        print ("@%.3fs taken for {%s}" % (time.time() - t0, func.__name__))
+        return back
+    return newFunc
+
+class PlanetaryOrbit(object):
+    # if no additional statement, use Astronomical Unit (AU):
+    # time : year
+    # distance : AU (ave distance between Sun and Earth)
+    # G * M_Sun = v ** 2 * r
+    # beta is the power of the distance in The Law of Attraction
+    def __init__(self, initx = 1, inity = 0, initvx = 0, initvy = 1.6 * math.pi,
+                 time_step = 0.0025, total_time = 1, beta = 2.5):
+        self.x = []
+        self.y = []
+        self.dt = time_step
+        self.tt = total_time
+        self.vx = initvx
+        self.vy = initvy
+        self.r = 0.0
+        self.cur_t = 0.0
+        self.power = beta + 1
+        self.beta = beta
+
+    @exeTime
+    def cruising(self):
+        self.x = cruisingx(beta = self.power - 1,total_time = self.tt, initvy = self.vy)
+        self.y = cruisingy(beta = self.power - 1,total_time = self.tt, initvy = self.vy)
+
+    def insert_plot_data(self):
+        pl.figure(figsize=(10,8), edgecolor='w')
+        pl.subplots_adjust(left=0.20, right=0.83)
+        pl.plot(self.x, self.y,'.',markersize=1)
+        pl.plot([1.1,-1.1,-1.1,1.1],[1.1,1.1,-1.1,-1.1],'.',markersize=0.001)
+
+    def show_plot(self):
+        # pl.xlim(-1,1)
+        # pl.ylim(-0.9,0.9)
+        # l = []
+        # for i in range(-15,20,5):
+        #     l.append(i / 10)
+        # pl.yticks(l)
+        # pl.xticks(l)
+        pl.title('Exact simulation of elliptical orbit\n$\\beta=%r , total\\_time = %r(yr), init\_vy = %r \\pi (AU/yr)$'
+                 %(self.beta, self.tt, self.vy / math.pi))
+        pl.axis('equal')
+        pl.xlabel('x(AU)')
+        pl.ylabel('y(AU)')
+        pl.show()
+
+
+def main2():
+    planet = PlanetaryOrbit(total_time=3.27, initvy = 2* math.pi, beta = 3.1)
+    planet.cruising()
+    planet.insert_plot_data()
+    planet.show_plot()
+
+def main3():
+    #两个球的动图
+    planet = PlanetaryOrbit(total_time=3.27, initvy = 2* math.pi, beta = 3.1)
+    planet.cruising()
+    fig = plt.figure()
+    ax = plt.axes(title=('Simulation of elliptical orbit\n$\\beta=%r , total\\_time = %r(yr), init\_vy = %r \\pi (AU/yr)$'
+                  %(planet.beta, planet.tt, planet.vy / math.pi)),
+                  aspect='equal', autoscale_on=False, xlim=(-1.2,1.2),ylim=(-1.2,1.2),xlabel=('x'),ylabel=('y'))
+    line1=ax.plot([],[],'b:')#初始化数据，line是轨迹，point是轨迹的头部
+    point1=ax.plot([],[],'bo',markersize=10)
+    sun=ax.plot([],[],'ro',markersize=20)
+    edge=ax.plot([],[],'.',markersize=1.01)
+    images=[]
+
+    def init():#该函数用于初始化动画
+
+        line1=ax.plot([],[],'b:',markersize=8)
+        point1=ax.plot([],[],'bo',markersize=10)
+        sun=ax.plot([],[],'ro',markersize=20)
+        edge=ax.plot([],[],'.',markersize=1.01)
+        return line1,point1
+
+    # change value of speed for velocity of animation
+    speed = 100
+    def anmi(i):
+        ax.clear()
+        plt.title('Simulation of elliptical orbit\n$\\beta=%r , total\\_time = %r(yr), init\_vy = %r \\pi (AU/yr)$'
+                    %(planet.beta, planet.tt, planet.vy / math.pi))
+        edge = ax.plot([1.2,-1.2,-1.2,1.2],[1.2,1.2,-1.2,-1.2],'.',markersize=0.001)
+        line1=ax.plot(planet.x[0:speed*i],planet.y[0:speed*i], 'r:',markersize=8)
+        point1 = ax.plot(planet.x[speed*i-1:speed*i],planet.y[speed*i-1:speed*i],'bo', markersize=10)
+        sun=ax.plot([0],[0],'go',markersize=20)
+        return line1,point1,edge
+
+    anmi = animation.FuncAnimation(fig, anmi, init_func=init, frames=500, interval=1, blit=False,repeat=False,)
+    plt.show()
+
+if __name__ == '__main__':
+    main2()
+    main3()
+</code></pre>
+
+### 图像
+
 
