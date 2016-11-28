@@ -249,12 +249,21 @@ if __name__ == '__main__':
 
 ### 图像
 
+在β值处于2-3的范围内时，看不出明显的轨道不稳定：
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Ex_4.png)
+当轨道的β值再增加一点，就会进一步不稳定：
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Ex10_3.png)
 下图为β=3.1时，小行星轨道不断被中心的星体吸引的轨道图：
 ![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Ex10_1.png)
 动态图：
 ![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Ex10.gif)
-进一步改变β值，行星有可能开始了各种奇形怪状的运行方式：
+进一步改变β值，行星有可能开始了各种奇形怪状的运行方式(弹射)：
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Ex10_2.png)
 
 ### 结论
 
-对于平方反比定律而言
+对于平方反比定律而言,在自然界存在于β=2的情形，在其他情况下很容易处于不稳定状态，但是为什么这就是β=2的原因呢？也许可以从另一个角度理解。<br/>
+自然界中存在的物理规律永远不只有一个可能的理解方法，也不只有一种可能的验证方法。就像平方反比定律，我们即可以从稳定性的角度来验证，也可以从球面波的角度来理解，而β取其他值就没有这样的性质，这就是为什么自然界如此运行。
+
+### 鸣谢
+感谢卢江玮同学的代码指导
