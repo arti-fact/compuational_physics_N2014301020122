@@ -249,4 +249,12 @@ if __name__ == '__main__':
 
 ### 图像
 
+下图为β=3.1时，小行星轨道不断被中心的星体吸引的轨道图：
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Ex10_1.png)
+动态图：
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Ex10.gif)
+进一步改变β值，行星有可能开始了各种奇形怪状的运行方式：
 
+### 结论
+
+对于平方反比定律而言
