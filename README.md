@@ -17,7 +17,7 @@
 - [x] [Exercise_09:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Exercise%209.md)
 - [x] [Exercise_10:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Exercise%2010.md)
 - [x] [Exercise_11:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Ex%2011.md)
-- [ ] [Exercise_12:]()
+- [x] [Exercise_12:](https://github.com/arti-fact/compuational_physics_N2014301020122/tree/master)
 - [ ] [Exercise_13:]()
 - [ ] [Exercise_14:]()
 
