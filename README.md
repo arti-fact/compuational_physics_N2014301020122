@@ -18,6 +18,6 @@
 - [x] [Exercise_10:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Exercise%2010.md)
 - [x] [Exercise_11:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Ex%2011.md)
 - [x] [Exercise_12:](https://github.com/arti-fact/compuational_physics_N2014301020122/tree/master)
-- [ ] [Exercise_13:]()
+- [x] [Exercise_13:](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/Ex%2013.md)
 - [ ] [Exercise_14:]()
 
