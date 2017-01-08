@@ -54,8 +54,8 @@ plt.show()
 </code></pre>
 
 它们距离原点的平均距离随步数的变化关系为  
-[![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%201.png)](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%20walk%201.py)  
-可见，这个系统中粒子距离原点的平均距离保持在0附近波动。按照概率论计算，粒子向左向右的概率相同，其距离原点的平均距离应该为0。这里数值结果和理论结果是一致的。
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/random%201.png)
+可见，这个系统中粒子距离原点的平均距离保持在0附近波动。按照概率论计算，粒子向左向右的概率相同，其距离原点的平均距离应该为0。这里数值结果和理论结果是一致的。  
 现在改用平方关系来看，我们改写代码有 <br/>
 
 ### 代码2
@@ -101,29 +101,29 @@ plt.show()
 </code></pre>
 
 它们距离原点距离平方随步数的变化关系为  
-[![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%202.png)](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%20walk%202.py)  
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/random%202.png)
 x的平方的平均值与步数近似为线性关系。这种线性关系在一维扩散系统中也有出现，表明这个随机行走的过程是“类扩散的”。  
 接下来我们将情况一般化，此时每一步的步长为-1~+1之间的一个值，且取每一个值的概率是一定的。此时两个平均值随步数的变化关系为  
-[![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%203.png)](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%20walk%203.py)  
-[![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%204.png)](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%20walk%204.py)  
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/random%203.png)  
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/random%204.png)  
 由图可知，此时x的平均值在0附近波动，x的平方的平均值与步数近似为线性关系，此过程也是“类扩散的”。  
 ## 三、左右不等可能的随机行走（7.3）  
 这里我们考察当向左向右的运动概率不相同时的情况。我们让向右行走的概率为0.75，向左为0.25，固定步长为1，观察两种平均值随步长的变化关系为  
-[![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%205.png)](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%20walk%205.py) 
-[![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%206.png)](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%20walk%206.py)  
-由图可知，x的平均值随步数线性增大，其平方的平均与步数成二次关系。这与概率论的结论相同。
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/random%205.png)   
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/random%206.png)  
+由图可知，x的平均值随步数线性增大，其平方的平均与步数成二次关系。这与概率论的结论相同。  
 ## 四、随机行走与扩散  
 这里我们讨论随机行走与扩散之间的相似性。选取大量随机行走者，模拟其在空间上密度随时间的变化关系，在一维情况下，可得  
-[![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/diffusion%201.png)](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/diffusion%201.py)  
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/diffusion%201.png)  
 由图可知，随着时间的增大，密度曲线的峰值下降，范围增大，总面积保持不变。  
 在二维情况下，可得  
-[![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/diffusion%2021.png)  
-![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/diffusion%2022.png)  
-![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/diffusion%2023.png)](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/diffusion%202.py)  
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/diffusion%2021.png)  
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/diffusion%2022.png)  
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/diffusion%2023.png)  
 注意这里三张图的z轴范围不同。可见，二维情况下结论与一维时是一致的。而这种行为符合我们对一个扩散过程的直观感受，即在初始时刻在某点滴入一定的扩散物，之后扩散物以该点为中心向四方扩散，直到各处的密度相同。  
 ## 五、二维扩散体系中熵的变化  
 这里我们考虑在一个二维体系中熵是如何变化的。我们考察仅存在单个粒子时的情况。当二维系统为长为30的点阵时，熵与时间的关系为：  
-![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/entropy%201.png)  
+![](https://github.com/arti-fact/compuational_physics_N2014301020122/blob/master/entropy%201.png)  
 可见，随着时间增大，熵的值增大，但是其增长速度降低。最终它会收敛到一个定值。
 ## 六、结论
 通过基于Python语言的数值计算，我们对随机行走过程可以得出如下结论：  
