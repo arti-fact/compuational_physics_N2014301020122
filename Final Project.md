@@ -1,6 +1,6 @@
-#Final Project
-##Chapter 7
-###2014301020122 王子华 天眷班
+# Final Project
+## Chapter 7
+### 2014301020122 王子华 天眷班
 
 ## 摘要  
 本文主要用Python程序对一系列随机过程做了模拟，通过观察数值计算的结果，并将其与概率论的结论相比较，证明数值计算的结果在处理随机过程方面是可信的。文中涉及的随机过程首先为一维情况下的随机行走，这其中分别讨论了左右概率相同和不同的情况。之后延伸到二维情况，并对二维系统中熵随时间变化的情况作了简单讨论。 
@@ -16,9 +16,44 @@
 在这种系统中，尽管理论上每个粒子的运动可以由力学定律决定，但是这会带来大量的微分方程，难以实际求解。为此，我们使用概率论来描述这个系统，使得原系统和这个随机系统在某些我们感兴趣的宏观性质上一致。通过探究这个随机系统，我们可以了解真实系统。  
 处理随机系统时，如果我们想用实验来探究其中规律，由于为了体现统计规律，实验的次数应该非常大，现实的实验将不可避免的耗时耗力，难以实现。为此，我们可以使用数值计算方法，利用随机数产生器产生随机数，利用计算机的快速计算能力，完成成千上万次的实验任务。  
 在许多随机过程中，这里我们感兴趣的是随机行走问题。一维情况下的随机行走问题，指的是一个粒子初始时刻位于原点，之后每次经过同样的时间间隔，其或者向左行走或者向右行走，两个方向的概率可能相同，也可能不同，步长可能一定也可能在一个范围内随机。其二维情况下则其每一步的方向任意，其它性质和一维情况相似。
+
 ## 二、左右等可能随机行走（步长一定或随机）  
-这里我们考虑一个典型的一维随机行走问题。粒子初始时刻位于x=0处，步长为1，相邻的两步之间时间间隔固定（故步数正比于时间），每一步向左和向右概率均为0.5。我们假设有5000个相同的粒子，观察它们运动的平均性质。  
-它们距离原点的平均距离随步数的变化关系为  
+这里我们考虑一个典型的一维随机行走问题。粒子初始时刻位于x=0处，步长为1，相邻的两步之间时间间隔固定（故步数正比于时间），每一步向左和向右概率均为0.5。我们假设有5000个相同的粒子，观察它们运动的平均性质。 <br/>
+
+### 代码1
+<pre><code>
+from __future__ import division
+import numpy as np
+import matplotlib.pyplot as plt
+
+steps = np.linspace(0, 100, 101)
+x_ave = np.zeros(101)
+x_y0 = np.zeros(101)
+x_now = np.zeros(5000)
+
+for i in range(100):
+    for j in range(5000):
+        ruler = np.random.rand()
+        if ruler<=0.5:
+            x_now[j] = x_now[j] + 1
+        else:
+            x_now[j] = x_now[j] - 1
+    average = sum(x_now)/5000
+    x_ave[i+1] = average
+    
+plt.scatter(steps, x_ave)
+plt.plot(steps, x_y0)
+plt.xlim(0,100)
+plt.ylim(-1,1)
+plt.grid(True)
+plt.xlabel('step number(= time)')
+plt.ylabel('<x>')
+plt.title('<x> of 5000 walkers')
+
+plt.show()
+</code></pre>
+
+它们距离原点的平均距离随步数的变化关系为  
 [![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%201.png)](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%20walk%201.py)  
 可见，这个系统中粒子距离原点的平均距离保持在0附近波动。按照概率论，粒子向左向右的概率相同，其距离原点的平均距离应该为0。这里数值结果和理论结果是一致的。  
 它们距离原点距离平方随步数的变化关系为  
@@ -54,5 +89,5 @@ x的平方的平均值与步数近似为线性关系。这种线性关系在一�
 4.在二维随机行走体系中，随着时间增大，系统的熵增大，增长速度降低，并最终收敛到一个定值。  
 这些结论与概率论的结果和我们的直觉是相符的。由此证明，基于Python语言的数值计算结果在模拟随机系统上有很大的作用，其结果是可信的。
 ## 七、参考文献
-1.计算物理 Nicholas J.Giordano, Hisao Nakanishi
+1.计算物理 Nicholas J.Giordano, Hisao Nakanishi<br/>
 2.Stochastic process-Wikipedia
