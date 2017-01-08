@@ -55,9 +55,53 @@ plt.show()
 
 它们距离原点的平均距离随步数的变化关系为  
 [![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%201.png)](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%20walk%201.py)  
-可见，这个系统中粒子距离原点的平均距离保持在0附近波动。按照概率论，粒子向左向右的概率相同，其距离原点的平均距离应该为0。这里数值结果和理论结果是一致的。  
-它们距离原点距离平方随步数的变化关系为  
-[![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%202.png)](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%20walk%202.py)  
+可见，这个系统中粒子距离原点的平均距离保持在0附近波动。按照概率论计算，粒子向左向右的概率相同，其距离原点的平均距离应该为0。这里数值结果和理论结果是一致的。
+现在改用平方关系来看，我们改写代码有 <br/>
+
+### 代码2
+<pre><code>
+from __future__ import division
+import numpy as np
+import matplotlib.pyplot as plt
+
+steps = np.linspace(0, 100, 101)
+x2_ave = np.zeros(101)
+x_y0 = np.zeros(101)
+x_now = np.zeros(5000)
+x2_now = np.zeros(5000)
+
+for i in range(100):
+    for j in range(5000):
+        ruler = np.random.rand()
+        if ruler<=0.5:
+            x_now[j] = x_now[j] + 1
+        else:
+            x_now[j] = x_now[j] - 1
+        x2_now[j] = x_now[j]**2
+
+    average2 = sum(x2_now)/5000
+    x2_ave[i+1] = average2
+    
+para = np.polyfit(steps, x2_ave,1)
+poly = np.poly1d(para)
+y_fit = poly(steps)
+
+plt.scatter(steps, x2_ave,s=2)
+plt.plot(steps, y_fit, 'r', label = 'fit line')
+plt.legend(loc='upper left')
+
+plt.xlim(0,100)
+plt.ylim(0,100)
+plt.grid(True)
+plt.xlabel('step number(= time)')
+plt.ylabel('<x^2>')
+plt.title('<x^2> of 5000 walkers')
+
+plt.show()
+</code></pre>
+
+它们距离原点距离平方随步数的变化关系为  
+[![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%202.png)](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%20walk%202.py)  
 x的平方的平均值与步数近似为线性关系。这种线性关系在一维扩散系统中也有出现，表明这个随机行走的过程是“类扩散的”。  
 接下来我们将情况一般化，此时每一步的步长为-1~+1之间的一个值，且取每一个值的概率是一定的。此时两个平均值随步数的变化关系为  
 [![](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%203.png)](https://raw.githubusercontent.com/wuyuqiao/computationalphysics_N2013301020142/master/Ex-15/random%20walk%203.py)  
